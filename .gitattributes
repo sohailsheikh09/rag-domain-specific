@@ -1,0 +1,19 @@
+# Normalize all text files to LF in the repository
+# Git will convert to platform line endings on checkout
+* text=auto eol=lf
+
+# Windows batch/PowerShell files must use CRLF
+*.bat text eol=crlf
+*.cmd text eol=crlf
+*.ps1 text eol=crlf
+
+# Binary files — tell Git not to touch these
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.pdf binary
+*.zip binary
+*.pkl binary
+*.bin binary

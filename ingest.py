@@ -87,7 +87,11 @@ def ingest_domain(domain: str):
                 "chunk_id":  i,
                 "content":   chunk.page_content,
                 "embedding": embedding,
-                "metadata":  {}
+                "metadata":  {
+                    "page":      chunk.metadata.get("page", 0),
+                    "file_path": str(file_path),
+                    "file_type": file_path.suffix.lower(),
+                }
             }).execute()
 
             time.sleep(0.5)
